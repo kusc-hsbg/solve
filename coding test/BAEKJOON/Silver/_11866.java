@@ -8,6 +8,7 @@ public class _11866 {
 
         int N = scanner.nextInt();
         int K = scanner.nextInt();
+        scanner.close(); // Scanner를 닫습니다.
 
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 1; i <= N; i++) {
