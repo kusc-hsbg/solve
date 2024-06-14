@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class _1174 {
+    static int n;
+    static boolean[] visited = new boolean[10];
+    static ArrayList<Long> res = new ArrayList<>();
+    static ArrayList<Integer> v = new ArrayList<>();
+
+    public static void backtracking(int digit, int r, int cnt) {
+        if (cnt == r) {
+            long num = 0;
+            for (int i = 0; i < v.size(); ++i) {
+                num *= 10;
+                num += v.get(i);
+            }
+            res.add(num);
+            return;
+        }
+
+        for (int i = 0; i <= digit; ++i) {
+            if (!visited[i]) {
+                if (v.isEmpty() || i < v.get(v.size() - 1)) {
+                    visited[i] = true;
+                    v.add(i);
+                    backtracking(digit, r, cnt + 1);
+                    visited[i] = false;
+                    v.remove(v.size() - 1);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+
+        if (n <= 10) {
+            System.out.println(n - 1);
+            return;
+        } else {
+            for (int i = 2; i <= 10; ++i) {
+                backtracking(9, i, 0);
+            }
+            
+            Collections.sort(res);
+
+            if (n > res.size() + 10) {
+                System.out.println(-1);
+            } else {
+                System.out.println(res.get(n - 11));
+            }
+        }
+    }
+}
