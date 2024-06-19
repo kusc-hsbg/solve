@@ -14,7 +14,7 @@ public class _13977 {
         while (a > 1) {
             long q = a / mod;
             long t = mod;
-            mod = (int) (a % mod);  // Convert to int here for modulus operation
+            mod = (int) (a % mod);
             a = t;
             t = x0;
             x0 = x1 - q * x0;

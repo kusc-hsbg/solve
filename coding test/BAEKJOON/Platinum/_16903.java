@@ -24,7 +24,7 @@ public class _16903 {
 
     static class IntTrie {
         private final Node root;
-        private static final int BITS = 30; // enough to cover numbers up to 1_000_000_000
+        private static final int BITS = 30;
 
         public IntTrie() {
             root = new Node();

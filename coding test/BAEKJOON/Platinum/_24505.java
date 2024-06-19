@@ -19,10 +19,10 @@ public class _24505 {
                 }
             }
 
-            int result = query(11, N - 1); // 최종 결과를 계산합니다.
+            int result = query(11, N - 1);
             System.out.println(result);
         } finally {
-            scanner.close(); // 스캐너를 닫습니다.
+            scanner.close();
         }
     }
 

@@ -12,7 +12,6 @@ public class _1260 {
         int M = sc.nextInt(); 
         int V = sc.nextInt(); 
 
-        // graph = (ArrayList<Integer>[]) new ArrayList[N + 1]; (+)
         for (int i = 1; i <= N; i++) {
             graph[i] = new ArrayList<>();
         }
